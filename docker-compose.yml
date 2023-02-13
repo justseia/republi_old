@@ -3,6 +3,7 @@ version: "3"
 services:
     nginx:
         image: nginx:latest
+        restart: always
         volumes:
             - ./:/var/www
             - ./_docker/nginx/conf.d:/etc/nginx/conf.d
@@ -10,15 +11,16 @@ services:
             - 80:80
         depends_on:
             - app
-        container_name: project_nginx
+        container_name: republi_nginx
 
     app:
+        restart: always
         build:
             context: .
             dockerfile: _docker/app/Dockerfile
         volumes:
             - ./:/var/www
-        container_name: project_app
+        container_name: republi_app
         depends_on:
             - db
 
@@ -26,9 +28,9 @@ services:
         image: mysql:8.0
         restart: always
         environment:
-            MYSQL_DATABASE: ajua
-            MYSQL_ROOT_PASSWORD: password
+            MYSQL_DATABASE: republi
+            MYSQL_ROOT_PASSWORD: root
         ports:
             - 8001:3306
         command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
-        container_name: project_db
+        container_name: republi_db
