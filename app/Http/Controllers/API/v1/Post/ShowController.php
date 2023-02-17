@@ -23,7 +23,26 @@ class ShowController extends Controller
             'id' => $post->id,
             'title' => $post->title,
             'body' => $post->body,
-            'additional_data' => [],
+            'additional_data' => [
+                [
+                    'title' => 'Заголовок',
+                    'body' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'sstandard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic t ypesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more rently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+                    'image' => 'https://via.placeholder.com/400x300.png/008822?text=iusto',
+                    'quote' => null
+                ],
+                [
+                    'title' => 'Заголовок',
+                    'body' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'sstandard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic t ypesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more rently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+                    'image' => null,
+                    'quote' => '“ Цитата - это повторение предложения, фразы или отрывка из речи или текста, которые кто-то сказал или написал. ”'
+                ],
+                [
+                    'title' => 'Заголовок',
+                    'body' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'sstandard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic t ypesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more rently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+                    'image' => null,
+                    'quote' => null
+                ]
+            ],
             'user' => [
                 'id' => $post->user->id,
                 'name' => $post->user->name,
