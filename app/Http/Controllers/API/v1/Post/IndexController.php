@@ -27,7 +27,7 @@ class IndexController extends Controller
                 ],
                 'category' => $post->category->name,
                 'images' => $post->images->map(fn($image) => $image->url),
-                'create_date' => $post->created_at,
+                'created_at' => $post->created_at,
             ];
         });
         $posts->setCollection($collection);
