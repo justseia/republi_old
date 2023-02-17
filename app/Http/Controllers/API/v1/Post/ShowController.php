@@ -23,6 +23,7 @@ class ShowController extends Controller
             'id' => $post->id,
             'title' => $post->title,
             'body' => $post->body,
+            'additional_data' => [],
             'user' => [
                 'id' => $post->user->id,
                 'name' => $post->user->name,
