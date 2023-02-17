@@ -20,10 +20,10 @@ return new class extends Migration
             $table->unsignedBigInteger('country_id');
             $table->unsignedBigInteger('company_id');
             $table->unsignedBigInteger('criteria_id');
-            $table->unsignedBigInteger('responsibility_id');
-            $table->unsignedBigInteger('requirement_id');
-            $table->unsignedBigInteger('condition_id');
-            $table->unsignedBigInteger('skill_id');
+            $table->json('responsibility');
+            $table->json('requirement');
+            $table->json('condition');
+            $table->json('skill');
             $table->timestamps();
             $table->softDeletes();
         });

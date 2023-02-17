@@ -22,10 +22,10 @@ Route::group(['middleware' => 'api', 'prefix' => 'auth'], function () {
     Route::post('/me', [\App\Http\Controllers\API\v1\Auth\AuthController::class, 'me']);
 });
 
-Route::group(['middleware' => 'jwt.auth'], function () {
+//Route::group(['middleware' => 'jwt.auth'], function () {
     Route::get('/posts', \App\Http\Controllers\API\v1\Post\IndexController::class);
     Route::get('/posts/{post}', \App\Http\Controllers\API\v1\Post\ShowController::class);
 
-    Route::get('/vacancies', \App\Http\Controllers\API\v1\Vacancy\IndexController::class);
-    Route::get('/vacancies/{vacancy}', \App\Http\Controllers\API\v1\Vacancy\ShowController::class);
-});
+//    Route::get('/vacancies', \App\Http\Controllers\API\v1\Vacancy\IndexController::class);
+//    Route::get('/vacancies/{vacancy}', \App\Http\Controllers\API\v1\Vacancy\ShowController::class);
+//});

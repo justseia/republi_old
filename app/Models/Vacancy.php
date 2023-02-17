@@ -12,7 +12,6 @@ class Vacancy extends Model
 
     protected $table = 'vacancies';
     protected $guarded = [];
-
     protected $hidden = [
         'created_at',
         'updated_at',

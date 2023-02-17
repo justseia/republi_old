@@ -17,7 +17,14 @@ class VacancyFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'salary'  => fake()->numberBetween(),
+            'country_id'  => fake()->numberBetween(),
+            'company_id'  => fake()->numberBetween(),
+            'criteria_id'  => fake()->numberBetween(),
+            'salary'  => fake()->numberBetween(),
+            'salary'  => fake()->numberBetween(),
+            'salary'  => fake()->numberBetween(),
+            'salary'  => fake()->numberBetween(),
         ];
     }
 }
