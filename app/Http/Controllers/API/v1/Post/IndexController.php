@@ -22,7 +22,8 @@ class IndexController extends Controller
                     'id' => $post->user->id,
                     'name' => $post->user->name,
                     'surname' => $post->user->surname,
-                    'check' => $post->id
+                    'photo' => $post->user->photo,
+                    'follow' => true
                 ],
                 'category' => $post->category->name,
                 'images' => $post->images->map(fn($image) => $image->url),
