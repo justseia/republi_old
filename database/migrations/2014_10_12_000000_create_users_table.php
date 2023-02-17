@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->string('name');
             $table->string('surname');
             $table->timestamp('birthday');
-            $table->string('photo')->default('');
+            $table->string('photo')->nullable(true);
             $table->string('number');
             $table->string('email')->unique();
             $table->string('password');
