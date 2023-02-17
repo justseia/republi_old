@@ -23,11 +23,14 @@ class IndexController extends Controller
                     'name' => $post->user->name,
                     'surname' => $post->user->surname,
                     'photo' => $post->user->photo,
-                    'follow' => true
+                    'follow' => false
                 ],
                 'category' => $post->category->name,
-                'images' => $post->images->map(fn($image) => $image->url),
-                'created_at' => $post->created_at,
+                'images' => $post->images,
+                'created_at' => $post->created_at->diffForHumans(now(), true),
+                'likes' => 324,
+                'comments' => 7,
+                'views' => 7,
             ];
         });
         $posts->setCollection($collection);
