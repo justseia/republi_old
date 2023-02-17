@@ -23,7 +23,8 @@ class IndexController extends Controller
                     'name' => $post->user->name,
                     'surname' => $post->user->surname,
                     'photo' => $post->user->photo,
-                    'follow' => false
+                    'is_popular' => (boolean)$post->user->is_popular,
+                    'follow' => (boolean)$post->user->is_popular
                 ],
                 'category' => $post->category->name,
                 'images' => $post->images,

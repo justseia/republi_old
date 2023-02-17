@@ -30,11 +30,6 @@ class Post extends Model
 
     public function category()
     {
-        return $this->belongsTo(User::class);
-    }
-
-    public function country()
-    {
-        return $this->belongsTo(Country::with('city'));
+        return $this->belongsTo(Category::class);
     }
 }
