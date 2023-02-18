@@ -29,9 +29,9 @@ class IndexController extends Controller
                 'category' => $post->category->name,
                 'images' => $post->images,
                 'created_at' => $post->created_at->diffForHumans(now(), true),
-                'likes' => 324,
-                'comments' => 7,
-                'views' => 7,
+                'total_likes' => 324,
+                'total_views' => 7,
+                'total_comments' => 7,
             ];
         });
         $posts->setCollection($collection);

@@ -32,4 +32,14 @@ class Post extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function additional_data()
+    {
+        return $this->hasMany(PostAdditionalData::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(PostComment::class)->with(['user']);
+    }
 }
