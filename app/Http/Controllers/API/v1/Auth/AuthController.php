@@ -4,8 +4,10 @@ namespace App\Http\Controllers\API\v1\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Mail\VerifyMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
@@ -53,11 +55,11 @@ class AuthController extends Controller
         }
 
         User::create([
-            'name' => $request['name'],
-            'surname' => $request['surname'],
+            'full_name' => $request['full_name'],
             'birthday' => $request['birthday'],
             'photo' => $request['photo'],
             'number' => $request['number'],
+            'username' => $request['username'],
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
         ]);

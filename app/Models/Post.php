@@ -40,6 +40,6 @@ class Post extends Model
 
     public function comments()
     {
-        return $this->hasMany(PostComment::class)->with(['user']);
+        return $this->hasMany(PostComment::class)->with(['user', 'replies'])->orderBy('id', 'DESC')->whereNull('parent_id');
     }
 }

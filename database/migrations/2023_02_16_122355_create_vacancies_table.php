@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('vacancies', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('position');
             $table->unsignedBigInteger('salary');
-            $table->unsignedBigInteger('country_id');
+            $table->unsignedBigInteger('location_id');
             $table->unsignedBigInteger('company_id');
             $table->unsignedBigInteger('criteria_id');
             $table->json('responsibility');

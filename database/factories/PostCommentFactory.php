@@ -20,7 +20,7 @@ class PostCommentFactory extends Factory
             'post_id' => fake()->numberBetween(1, 50),
             'parent_id' => null,
             'user_id' => fake()->numberBetween(1, 10),
-            'like' => fake()->numberBetween(1, 100),
+            'likes' => fake()->numberBetween(1, 10000),
             'body' => fake()->text(),
         ];
     }

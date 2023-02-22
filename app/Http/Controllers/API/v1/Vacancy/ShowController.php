@@ -18,5 +18,7 @@ class ShowController extends Controller
                 'message' => 'Not found'
             ], 404);
         }
+
+        return response()->json($vacancy);
     }
 }

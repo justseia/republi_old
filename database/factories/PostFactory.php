@@ -21,6 +21,8 @@ class PostFactory extends Factory
             'body' => fake()->text(),
             'image' => fake()->imageUrl(),
             'user_id' => fake()->numberBetween(1, 10),
+            'likes' => fake()->numberBetween(1, 10000),
+            'views' => fake()->numberBetween(1, 10000),
             'category_id' => fake()->numberBetween(1, 10),
         ];
     }

@@ -18,6 +18,8 @@ return new class extends Migration {
             $table->text('body');
             $table->string('image');
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('likes')->default(0);
+            $table->unsignedBigInteger('views')->default(0);
             $table->unsignedBigInteger('category_id');
             $table->timestamps();
             $table->softDeletes();
