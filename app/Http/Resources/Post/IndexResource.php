@@ -24,7 +24,7 @@ class IndexResource extends JsonResource
                 'username' => $this->user->username,
                 'photo' => $this->user->photo,
                 'is_popular' => (boolean)$this->user->is_popular,
-                'follow' => (boolean)$this->user->is_popular
+                'is_follow' => (boolean)$this->user->is_popular
             ],
             'category' => $this->category->name,
             'images' => $this->images,
