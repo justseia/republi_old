@@ -33,8 +33,8 @@
 <body>
 <div style="display: flex; justify-content: center;background-color: rgb(243, 244, 245);">
 	<div class="md:p-10" style="display: flex; flex-direction: column; justify-content: center; padding: 1.25rem; text-align: center;">
-		<div style="display: flex; justify-content: center;">
-			<img src="{{ asset('assets/images/logo.png') }}" alt="" style="width: 160px;" width="160">
+		<div style="display: flex; justify-content: center; margin-bottom: 20px;">
+			<img src="{{ asset('assets/icons/logo.svg') }}" alt="" style="width: 160px;" width="160">
 		</div>
 		<div class="md:px-[100px]" style="width: auto; max-width: 600px; background-color: rgb(255 255 255); padding-top: 2.5rem; padding-bottom: 2.5rem; padding-left: 50px; padding-right: 50px;">
 			<div class="md:text-[30px]" style="margin-bottom: 1.25rem; font-size: 22px; font-weight: 700; color: rgb(75 85 99);">Добро пожаловать в Republi!</div>

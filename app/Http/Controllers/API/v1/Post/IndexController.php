@@ -10,7 +10,7 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $posts = Post::with(['images', 'user', 'category'])->simplePaginate(200);
+        $posts = Post::with(['images', 'user', 'category', 'comments'])->simplePaginate(50);
 
         return IndexResource::collection($posts);
     }

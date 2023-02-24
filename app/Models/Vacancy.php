@@ -18,8 +18,13 @@ class Vacancy extends Model
         'deleted_at'
     ];
 
-    public function country()
+    public function city()
     {
-        return $this->belongsTo(Country::class);
+        return $this->belongsTo(City::class, 'location_id');
+    }
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
     }
 }

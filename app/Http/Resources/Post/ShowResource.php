@@ -55,8 +55,8 @@ class ShowResource extends JsonResource
                     'created_at' => $reply->created_at->diffForHumans(now(), true),
                     'user' => [
                         'id' => $reply->user->id,
-                        'name' => $reply->user->name,
-                        'surname' => $reply->user->surname,
+                        'full_name' => $comment->user->full_name,
+                        'username' => $comment->user->username,
                         'photo' => $reply->user->photo,
                         'is_popular' => (boolean)$comment->user->is_popular,
                     ],
