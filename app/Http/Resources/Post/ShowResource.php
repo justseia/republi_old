@@ -27,11 +27,11 @@ class ShowResource extends JsonResource
             ]),
             'user' => [
                 'id' => $this->user->id,
-                'name' => $this->user->name,
-                'surname' => $this->user->surname,
+                'full_name' => $this->user->full_name,
+                'username' => $this->user->username,
                 'photo' => $this->user->photo,
                 'is_popular' => (boolean)$this->user->is_popular,
-                'follow' => (boolean)$this->user->is_popular
+                'is_follow' => (boolean)$this->user->is_popular
             ],
             'category' => $this->category->name,
             'created_at' => $this->created_at->diffForHumans(now(), true),
@@ -44,8 +44,8 @@ class ShowResource extends JsonResource
                 'created_at' => $comment->created_at->diffForHumans(now(), true),
                 'user' => [
                     'id' => $comment->user->id,
-                    'name' => $comment->user->name,
-                    'surname' => $comment->user->surname,
+                    'full_name' => $comment->user->full_name,
+                    'username' => $comment->user->username,
                     'photo' => $comment->user->photo,
                     'is_popular' => (boolean)$comment->user->is_popular,
                 ],
