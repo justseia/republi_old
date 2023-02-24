@@ -22,5 +22,6 @@ class DatabaseSeeder extends Seeder
         \App\Models\City::factory(50)->create();
         \App\Models\PostAdditionalData::factory(50)->create();
         \App\Models\PostComment::factory(50)->create();
+        \App\Models\Vacancy::factory(50)->create();
     }
 }

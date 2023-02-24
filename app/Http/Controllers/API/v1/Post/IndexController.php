@@ -12,7 +12,6 @@ class IndexController extends Controller
     {
         $posts = Post::with(['images', 'user', 'category'])->simplePaginate(200);
 
-//        return IndexResource::collection($posts);
-        return $posts;
+        return IndexResource::collection($posts);
     }
 }

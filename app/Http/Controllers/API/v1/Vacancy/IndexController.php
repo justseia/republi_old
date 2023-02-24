@@ -10,11 +10,8 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-//        $vacancy = Vacancy::simplePaginate(50);
-//        return response()->json($vacancy, 200);
+        $vacancy = Vacancy::with('country.city')->simplePaginate(50);
 
-        $vacancy = [
-            ''
-        ];
+        return response()->json($vacancy, 200);
     }
 }

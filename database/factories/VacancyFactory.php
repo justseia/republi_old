@@ -17,10 +17,12 @@ class VacancyFactory extends Factory
     public function definition()
     {
         return [
-            'salary'  => fake()->numberBetween(),
-            'country_id'  => fake()->numberBetween(),
-            'company_id'  => fake()->numberBetween(),
-            'criteria_id'  => fake()->numberBetween(),
+            'position'  => fake()->month(),
+            'salary_from'  => fake()->numberBetween(10000, 50000),
+            'salary_to'  => fake()->numberBetween(50000, 100000),
+            'country_id'  => fake()->numberBetween(1, 2),
+            'company_id'  => fake()->numberBetween(1, 10),
+            'criteria_id'  => fake()->numberBetween(1, 10),
         ];
     }
 }
