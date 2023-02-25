@@ -4,7 +4,7 @@ namespace App\Http\Resources\Vacancy;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class IndexResource extends JsonResource
+class ShowResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -20,8 +20,10 @@ class IndexResource extends JsonResource
             'salary_from' => $this->salary_from,
             'salary_to' => $this->salary_to,
             'location' => $this->city->country->name . ', ' . $this->city->name,
-            'is_saved' => (boolean)0,
-            'responded' => (boolean)0,
+            'responsibility' => json_decode($this->responsibility),
+            'requirement' => json_decode($this->requirement),
+            'condition' => json_decode($this->condition),
+            'skill' => json_decode($this->skill),
             'company' => [
                 'id' => $this->company->id,
                 'name' => $this->company->name,
