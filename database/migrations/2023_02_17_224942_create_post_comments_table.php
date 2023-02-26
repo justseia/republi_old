@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('post_id');
             $table->unsignedBigInteger('parent_id')->nullable(true);
-            $table->unsignedBigInteger('likes')->default(0);
+            $table->unsignedBigInteger('like')->default(0);
             $table->text('body');
             $table->timestamps();
             $table->softDeletes();

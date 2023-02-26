@@ -39,8 +39,9 @@ class ShowResource extends JsonResource
             'total_views' => $this->views,
             'total_comments' => $this->comments->count() + $this->comments->sum(fn($comment) => $comment->replies->count()),
             'comments' => $this->comments->map(fn($comment) => [
+                'id' => $comment->id,
                 'body' => $comment->body,
-                'total_likes' => $comment->likes,
+                'total_likes' => $comment->like,
                 'created_at' => $comment->created_at->diffForHumans(now(), true),
                 'user' => [
                     'id' => $comment->user->id,
@@ -50,8 +51,9 @@ class ShowResource extends JsonResource
                     'is_popular' => (boolean)$comment->user->is_popular,
                 ],
                 'replies' => $comment->replies->map(fn($reply) => [
+                    'id' => $comment->id,
                     'body' => $reply->body,
-                    'total_likes' => $reply->likes,
+                    'total_likes' => $reply->like,
                     'created_at' => $reply->created_at->diffForHumans(now(), true),
                     'user' => [
                         'id' => $reply->user->id,
