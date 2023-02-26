@@ -47,6 +47,10 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
+        $file = $request->file('photo');
+        $name = $file->hashName();
+        $extension = $file->extension();
+        dd($name);
         if (User::where('email', $request->email)->exists()) {
             return response()->json([
                 'status' => '200',
@@ -54,10 +58,14 @@ class AuthController extends Controller
             ], 200);
         }
 
+
+//        $fileName = $name . '.' . $extension;
+//        $file->storeAs('public', $fileName);
+
         User::create([
             'full_name' => $request['full_name'],
             'birthday' => $request['birthday'],
-            'photo' => $request['photo'],
+            'photo' => $fileName,
             'number' => $request['number'],
             'username' => $request['username'],
             'email' => $request['email'],
