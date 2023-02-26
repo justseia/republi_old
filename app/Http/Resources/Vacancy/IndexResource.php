@@ -21,7 +21,13 @@ class IndexResource extends JsonResource
             'salary_to' => $this->salary_to,
             'location' => $this->city->country->name . ', ' . $this->city->name,
             'is_saved' => (boolean)0,
-            'responded' => (boolean)0,
+            'is_responded' => (boolean)0,
+            'total_responded' => 10,
+            'criteria' => [
+                'Можно из дома',
+                'Полная занятость',
+                'Отклик без резюме',
+            ],
             'company' => [
                 'id' => $this->company->id,
                 'name' => $this->company->name,

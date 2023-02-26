@@ -20,10 +20,18 @@ class ShowResource extends JsonResource
             'salary_from' => $this->salary_from,
             'salary_to' => $this->salary_to,
             'location' => $this->city->country->name . ', ' . $this->city->name,
+            'is_saved' => (boolean)0,
+            'is_responded' => (boolean)0,
+            'total_responded' => 10,
             'responsibility' => json_decode($this->responsibility),
             'requirement' => json_decode($this->requirement),
             'condition' => json_decode($this->condition),
             'skill' => json_decode($this->skill),
+            'criteria' => [
+                'Можно из дома',
+                'Полная занятость',
+                'Отклик без резюме',
+            ],
             'company' => [
                 'id' => $this->company->id,
                 'name' => $this->company->name,

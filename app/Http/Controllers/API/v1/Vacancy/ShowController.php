@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API\v1\Vacancy;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Vacancy\IndexResource;
 use App\Models\Vacancy;
 use Illuminate\Http\Request;
 
@@ -19,6 +20,6 @@ class ShowController extends Controller
             ], 404);
         }
 
-        return response()->json($vacancy);
+        return new IndexResource($vacancy);
     }
 }
