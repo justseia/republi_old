@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\API\v1\Vacancy;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\Vacancy\IndexResource;
+use App\Http\Resources\Vacancy\ShowResource;
 use App\Models\Vacancy;
 use Illuminate\Http\Request;
 
@@ -20,6 +20,6 @@ class ShowController extends Controller
             ], 404);
         }
 
-        return new IndexResource($vacancy);
+        return new ShowResource($vacancy);
     }
 }
