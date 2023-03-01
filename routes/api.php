@@ -35,4 +35,5 @@ Route::patch('/posts/{post}/comment/{comment}/unlike', \App\Http\Controllers\API
 
 Route::get('/vacancies', \App\Http\Controllers\API\v1\Vacancy\IndexController::class);
 Route::get('/vacancies/{vacancy}', \App\Http\Controllers\API\v1\Vacancy\ShowController::class);
+Route::post('/vacancy', \App\Http\Controllers\API\v1\Vacancy\StoreController::class);
 //});
