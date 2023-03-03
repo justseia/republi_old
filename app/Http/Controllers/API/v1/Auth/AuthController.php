@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API\v1\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Company;
 use App\Models\User;
 use App\Mail\VerifyMail;
 use Illuminate\Http\Request;
@@ -43,6 +44,45 @@ class AuthController extends Controller
     public function refresh()
     {
         return $this->respondWithToken(auth()->refresh());
+    }
+
+    public function register_componay(Request $request)
+    {
+        if (Company::where('email', $request->email)->exists()) {
+            return response()->json([
+                'status' => '400',
+                'message' => 'Company already created',
+            ], 400);
+        }
+
+        if (Company::where('username', $request->username)->exists()) {
+            return response()->json([
+                'status' => '400',
+                'message' => 'Username exists',
+            ], 400);
+        }
+
+        $file = $request->file('photo');
+        $name = $file->hashName();
+        $file->storeAs('public', $name);
+
+        Company::create([
+            'name' => $request['name'],
+            'BIN/IIN' => $request['BIN/IIN'],
+            'contact_person' => $request['contact_person'],
+            'photo' => $name,
+            'specialty' => $request['specialty'],
+            'number' => $request['number'],
+            'username' => $request['username'],
+            'created_company' => $request['created_company'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+        ]);
+
+        return response()->json([
+            'status' => '201',
+            'message' => 'User created successfully',
+        ], 201);
     }
 
     public function register(Request $request)

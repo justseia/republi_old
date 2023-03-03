@@ -51,7 +51,7 @@ class ShowResource extends JsonResource
                     'is_popular' => (boolean)$comment->user->is_popular,
                 ],
                 'replies' => $comment->replies->map(fn($reply) => [
-                    'id' => $comment->id,
+                    'id' => $comment->replies->id,
                     'body' => $reply->body,
                     'total_likes' => $reply->like,
                     'created_at' => $reply->created_at->diffForHumans(now(), true),
